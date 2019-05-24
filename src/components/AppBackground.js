@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from "react";
+import React, { useRef, useEffect, useState } from "react";
 import { makeStyles } from "@material-ui/styles";
 import { useTheme } from "@material-ui/core/styles";
 import useMediaQuery from "@material-ui/core/useMediaQuery";
@@ -13,9 +13,18 @@ const AppBackground = props => {
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("xs"));
   const videoRef = useRef();
+  const [videoIsBlurred, setVideoIsBlurred] = useState(false);
   useEffect(() => {
-    if (videoRef) videoRef.current.playbackRate = 0.7;
+    if (videoRef) videoRef.current.playbackRate = 1;
   }, [videoRef]);
+  useEffect(() => {
+    const timeoutId = setTimeout(() => {
+      setVideoIsBlurred(true);
+    }, 1000);
+    return () => {
+      clearTimeout(timeoutId);
+    };
+  }, []);
 
   return (
     <div className={classnames(classes.root, className)} {...restProps}>
@@ -27,7 +36,8 @@ const AppBackground = props => {
           muted
           loop
           className={classnames(classes.video, {
-            [classes.videoLight]: theme.palette.type === "light"
+            [classes.videoLight]: theme.palette.type === "light",
+            [classes.videoBlurred]: videoIsBlurred
           })}
         >
           <source src={VideoBackground} type="video/mp4" />
@@ -54,7 +64,11 @@ const useStyles = makeStyles(theme => {
       width: "100%",
       height: "100%",
       objectFit: "cover",
-      margin: "auto"
+      margin: "auto",
+      transition: "filter 4s"
+    },
+    videoBlurred: {
+      filter: "blur(8px)"
     },
     videoLight: {
       filter: "invert(100%)"
