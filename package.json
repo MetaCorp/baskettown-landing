@@ -10,7 +10,6 @@
     "react-dom": "^16.8.6",
     "react-scripts": "3.0.1",
     "react-use": "^9.0.0",
-    "react-video-cover": "^1.2.2",
     "rebound": "^0.1.0"
   },
   "scripts": {
