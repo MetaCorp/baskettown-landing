@@ -2,7 +2,6 @@ import React, { useRef, useEffect, useState } from "react";
 import { makeStyles } from "@material-ui/styles";
 import { useTheme } from "@material-ui/core/styles";
 import useMediaQuery from "@material-ui/core/useMediaQuery";
-// import VideoCover from "react-video-cover";
 import classnames from "classnames";
 
 import VideoBackground from "../assets/videos/background.mp4";
