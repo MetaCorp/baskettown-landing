@@ -47,33 +47,30 @@ const AppBackground = props => {
   );
 };
 
-const useStyles = makeStyles(theme => {
-  console.log(theme);
-  return {
-    root: {
-      position: "absolute",
-      top: 0,
-      left: 0,
-      zIndex: -999,
-      width: "100%",
-      height: "100%",
-      overflow: "hidden",
-      backgroundColor: theme.palette.background.default
-    },
-    video: {
-      width: "100%",
-      height: "100%",
-      objectFit: "cover",
-      margin: "auto",
-      transition: "filter 4s"
-    },
-    videoBlurred: {
-      filter: "blur(8px)"
-    },
-    videoLight: {
-      filter: "invert(100%)"
-    }
-  };
-});
+const useStyles = makeStyles(theme => ({
+  root: {
+    position: "absolute",
+    top: 0,
+    left: 0,
+    zIndex: -999,
+    width: "100%",
+    height: "100%",
+    overflow: "hidden",
+    backgroundColor: theme.palette.background.default
+  },
+  video: {
+    width: "100%",
+    height: "100%",
+    objectFit: "cover",
+    margin: "auto",
+    transition: "filter 4s"
+  },
+  videoBlurred: {
+    filter: "blur(8px)"
+  },
+  videoLight: {
+    filter: "invert(100%)"
+  }
+}));
 
 export default AppBackground;
