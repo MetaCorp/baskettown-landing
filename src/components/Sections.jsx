@@ -8,10 +8,16 @@ import Button from "@material-ui/core/Button";
 import MailchimpSubscribe from "react-mailchimp-subscribe";
 
 import Section1 from "./sections/Section1";
+import { useSetState } from "react-use";
 
 const Sections = props => {
   const { className, hideBackground, ...restProps } = props;
   const classes = useStyles();
+  const [formState, setFormState] = useSetState({
+    EMAIL: "",
+    FNAME: "",
+    LNAME: ""
+  });
 
   return (
     <div className={classnames(classes.root, className)} {...restProps}>
@@ -31,45 +37,44 @@ const Sections = props => {
           "https://gmail.us20.list-manage.com/subscribe/post?u=8d7edf0333642e86603b9a948&id=8dc71e9e5d"
         }
         render={({ subscribe, status, message }) => (
-          <form onSubmitted={subscribe}>
+          <form
+            onSubmit={e => {
+              e.preventDefault();
+              subscribe(formState);
+            }}
+          >
             <TextField
+              value={formState.EMAIL}
+              onChange={e => setFormState({ EMAIL: e.target.value })}
               label="Email"
               type="email"
-              autocapitalize="off"
-              autocorrect="off"
-              name="MERGE0"
-              id="MERGE0"
-              size="25"
               variant="outlined"
               placeholder="example@mail.com"
             />
             <TextField
+              value={formState.FNAME}
+              onChange={e => setFormState({ FNAME: e.target.value })}
               label="First Name"
               type="text"
-              name="MERGE1"
-              id="MERGE1"
-              size="25"
               variant="outlined"
               placeholder="Berthier"
             />
             <TextField
+              value={formState.LNAME}
+              onChange={e => setFormState({ LNAME: e.target.value })}
               label="Last Name"
               type="text"
-              name="MERGE2"
-              id="MERGE2"
-              size="25"
               variant="outlined"
               placeholder="Corinne"
             />
-            <Button variant="contained" type="submit" />
+            <Button variant="contained" type="submit">
+              Subscribe
+            </Button>
             {status === "sending" && (
-              <div style={{ color: "blue" }}>sending...</div>
+              <div style={{ color: "blue" }}>Sending...</div>
             )}
             {status === "error" && (
-              <div
-                style={{ color: "red" }}
-                dangerouslySetInnerHTML={{ __html: message }}
-              />
+              <div style={{ color: "red" }}>{message}</div>
             )}
             {status === "success" && (
               <div style={{ color: "green" }}>Subscribed !</div>
