@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, useCallback } from 'react'
 import { makeStyles } from '@material-ui/styles'
 
 import Box from '@material-ui/core/Box'
@@ -21,10 +21,10 @@ const App = () => {
 
 	const [ scrollY, setScrollY ] = useState(0)
 
-	const handleScroll = (e) => {
+	const handleScroll = useCallback((e) => {
 		const bodyOffset = document.body.getBoundingClientRect()
 		setScrollY(-bodyOffset.top)
-	}
+	}, [])
 
 	useEffect(() => {
 		window.addEventListener('scroll', handleScroll)
