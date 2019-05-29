@@ -14,7 +14,7 @@ import AnchorLink from 'react-anchor-link-smooth-scroll'
 import AppProvider from './providers/AppProvider'
 
 import background from './assets/images/basketball-basketball-hoop-basketball-ring-1040482.jpg'
-import logo from './assets/images/free_logo_19.pdf'
+import logo from './assets/images/free_logo_19.svg'
 
 const App = () => {
 	const classes = useStyles()
@@ -137,7 +137,8 @@ const useStyles = makeStyles({
 		fontSize: '0.8rem'
 	},
 	logo: {
-		marginTop: -52
+		marginTop: -52,
+		width: 196
 	},
 	toTop: {
 		position: 'fixed',
