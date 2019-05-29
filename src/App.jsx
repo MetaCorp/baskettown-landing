@@ -39,7 +39,9 @@ const App = () => {
 						<p>Intéressé ? Inscris-toi à la newsletter.</p>
 						<Paper className={classes.newsletter}>
 							<InputBase variant="outlined" placeholder="ton email" />
-							<Button>S'inscrire</Button>
+							<Button variant="contained" color="primary">
+								S'inscrire
+							</Button>
 						</Paper>
 					</Box>
 					<Box>
