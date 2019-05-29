@@ -25,12 +25,15 @@ const App = () => {
 		setScrollY(-bodyOffset.top)
 	}, [])
 
-	useEffect(() => {
-		window.addEventListener('scroll', handleScroll)
-		return () => {
-			window.removeEventListener('scroll', handleScroll)
-		}
-	}, [])
+	useEffect(
+		() => {
+			window.addEventListener('scroll', handleScroll)
+			return () => {
+				window.removeEventListener('scroll', handleScroll)
+			}
+		},
+		[ handleScroll ]
+	)
 
 	return (
 		<div className={classes.root}>

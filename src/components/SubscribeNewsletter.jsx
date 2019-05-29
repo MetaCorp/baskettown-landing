@@ -1,5 +1,4 @@
 import React, { useState, useCallback } from 'react'
-import MailchimpSubscribe from 'react-mailchimp-subscribe'
 import toQueryString from 'to-querystring'
 import jsonp from 'jsonp'
 
@@ -17,7 +16,7 @@ const tooltipTimeout = 5000
 const getAjaxUrl = (url) => url.replace('/post?', '/post-json?')
 
 const validateEmail = (email) => {
-	var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+	var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/ // eslint-disable-line
 	return re.test(String(email).toLowerCase())
 }
 

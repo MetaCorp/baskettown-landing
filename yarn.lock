@@ -7018,7 +7018,7 @@ prompts@^2.0.1:
     kleur "^3.0.2"
     sisteransi "^1.0.0"
 
-prop-types@^15.5.10, prop-types@^15.6.0, prop-types@^15.6.2, prop-types@^15.7.2:
+prop-types@^15.6.0, prop-types@^15.6.2, prop-types@^15.7.2:
   version "15.7.2"
   resolved "https://registry.yarnpkg.com/prop-types/-/prop-types-15.7.2.tgz#52c41e75b8c87e72b9d9360e0206b99dcbffa6c5"
   dependencies:
@@ -7226,14 +7226,6 @@ react-fast-compare@^2.0.4:
 react-is@^16.7.0, react-is@^16.8.0, react-is@^16.8.1, react-is@^16.8.4:
   version "16.8.6"
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-16.8.6.tgz#5bbc1e2d29141c9fbdfed456343fe2bc430a6a16"
-
-react-mailchimp-subscribe@^2.1.0:
-  version "2.1.0"
-  resolved "https://registry.yarnpkg.com/react-mailchimp-subscribe/-/react-mailchimp-subscribe-2.1.0.tgz#a2bb7064af4bad310ef5d308322de95491d401c3"
-  dependencies:
-    jsonp "^0.2.1"
-    prop-types "^15.5.10"
-    to-querystring "^1.0.4"
 
 react-scripts@3.0.1:
   version "3.0.1"
@@ -8404,7 +8396,7 @@ to-object-path@^0.3.0:
   dependencies:
     kind-of "^3.0.2"
 
-to-querystring@^1.0.4, to-querystring@^1.1.0:
+to-querystring@^1.1.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/to-querystring/-/to-querystring-1.1.0.tgz#31efbcebb332bcb2522de36129b4234179399fbd"
 
