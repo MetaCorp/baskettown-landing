@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { makeStyles } from '@material-ui/styles'
 
 import Box from '@material-ui/core/Box'
@@ -7,6 +7,7 @@ import Button from '@material-ui/core/Button'
 import Paper from '@material-ui/core/Paper'
 
 import ExpandMore from '@material-ui/icons/ExpandMore'
+import ExpandLess from '@material-ui/icons/ExpandLess'
 
 import AnchorLink from 'react-anchor-link-smooth-scroll'
 
@@ -17,6 +18,20 @@ import logo from './assets/images/free_logo_19.pdf'
 
 const App = () => {
 	const classes = useStyles()
+
+	const [ scrollY, setScrollY ] = useState(0)
+
+	const handleScroll = (e) => {
+		const bodyOffset = document.body.getBoundingClientRect()
+		setScrollY(-bodyOffset.top)
+	}
+
+	useEffect(() => {
+		window.addEventListener('scroll', handleScroll)
+		return () => {
+			window.removeEventListener('scroll', handleScroll)
+		}
+	}, [])
 
 	return (
 		<div className={classes.root}>
@@ -29,14 +44,15 @@ const App = () => {
 					height="100vh"
 					justifyContent="center"
 					alignItems="center"
-					component="section">
-					<img src={logo} alt="logo" />
+					component="section"
+					id="landing">
+					<img className={classes.logo} src={logo} alt="logo" />
 					<Box className={classes.title} component="h1">
 						FindMySquad
 					</Box>
 					<p className={classes.slogan}>L'appli pour mettre en relation des joueurs de basketball.</p>
 					<Box>
-						<p>Intéressé ? Inscris-toi à la newsletter.</p>
+						<p className={classes.newsletterText}>Intéressé ? Inscris-toi à la newsletter.</p>
 						<Paper className={classes.newsletter}>
 							<InputBase variant="outlined" placeholder="ton email" />
 							<Button variant="contained" color="primary">
@@ -53,11 +69,11 @@ const App = () => {
 						</a>
 					</Box>
 					<AnchorLink className={classes.arrowNext} href="#project">
-						<ExpandMore className={classes.arrowNextIcon} color="white" />
+						<ExpandMore className={classes.arrowNextIcon} />
 					</AnchorLink>
 				</Box>
 				<Box
-					classeName={classes.section2}
+					className={classes.section2}
 					component="section"
 					display="flex"
 					flexDirection="column"
@@ -70,6 +86,11 @@ const App = () => {
 					<p>Description</p>
 				</Box>
 				<Box component="footer">footer</Box>
+				{scrollY > 100 && (
+					<AnchorLink className={classes.toTop} href="#landing">
+						<ExpandLess className={classes.toTopIcon} />
+					</AnchorLink>
+				)}
 			</AppProvider>
 		</div>
 	)
@@ -93,8 +114,9 @@ const useStyles = makeStyles({
 		marginBottom: 8
 	},
 	slogan: {
-		fontSize: '1rem',
-		marginTop: 8
+		fontSize: '1.2rem',
+		marginTop: 8,
+		textAlign: 'center'
 	},
 	arrowNext: {
 		position: 'absolute',
@@ -109,7 +131,19 @@ const useStyles = makeStyles({
 		fontSize: '3rem'
 	},
 	newsletter: {
-		padding: '8px 16px'
+		padding: '8px 8px 8px 16px'
+	},
+	newsletterText: {
+		fontSize: '0.8rem'
+	},
+	logo: {
+		marginTop: -52
+	},
+	toTop: {
+		position: 'fixed',
+		bottom: 16,
+		right: 16,
+		color: 'black'
 	}
 })
 
