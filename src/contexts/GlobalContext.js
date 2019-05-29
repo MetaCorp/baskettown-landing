@@ -1,9 +1,9 @@
 import { createContext } from "react";
 
-import darkTheme from "../themes/darkTheme";
+import lightTheme from "../themes/lightTheme";
 
 export const defaultValue = {
-  theme: darkTheme
+  theme: lightTheme
 };
 
 const GlobalContext = createContext(defaultValue);
