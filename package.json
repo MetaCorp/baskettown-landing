@@ -3,13 +3,14 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@material-ui/core": "^4.0.0",
+    "@material-ui/core": "^4.0.1",
+    "@material-ui/icons": "^4.0.1",
     "classnames": "^2.2.6",
     "keyboardjs": "^2.5.1",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-scripts": "3.0.1",
-    "react-use": "^9.0.0",
+    "react-use": "^9.1.2",
     "rebound": "^0.1.0"
   },
   "scripts": {
@@ -17,6 +18,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
+    "generate:svg-components": "svgr --ext jsx --icon --expand-props end --out-dir ./src/assets/generated ./src/assets/images",
     "now-build": "yarn test && react-scripts build",
     "now-dev": "yarn start"
   },
@@ -34,5 +36,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@svgr/cli": "^4.3.0"
   }
 }
