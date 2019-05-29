@@ -72,8 +72,8 @@ const SubscribeNewsletter = () => {
 	}, [])
 
 	return status === 'success' ? (
-		<Paper className={classes.newsletter}>
-			<div style={{ color: 'green' }}>Subscribed !</div>
+		<Paper className={classes.newsletterSuccess}>
+			<div style={{ color: 'green' }}>Inscrit à la newsletter !</div>
 		</Paper>
 	) : (
 		<form
@@ -105,7 +105,18 @@ const SubscribeNewsletter = () => {
 
 const useStyles = makeStyles({
 	newsletter: {
-		padding: '8px 8px 8px 16px'
+		padding: '8px 8px 8px 16px',
+		maxWidth: 313,
+		maxHeight: 52
+	},
+	newsletterSuccess: {
+		maxWidth: 313,
+		maxHeight: 52,
+		minWidth: 313,
+		minHeight: 52,
+		display: 'flex',
+		alignItems: 'center',
+		justifyContent: 'center'
 	},
 	subscribe: {
 		marginLeft: 8
