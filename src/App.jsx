@@ -2,9 +2,6 @@ import React, { useEffect, useState, useCallback } from 'react'
 import { makeStyles } from '@material-ui/styles'
 
 import Box from '@material-ui/core/Box'
-import InputBase from '@material-ui/core/InputBase'
-import Button from '@material-ui/core/Button'
-import Paper from '@material-ui/core/Paper'
 
 import ExpandMore from '@material-ui/icons/ExpandMore'
 import ExpandLess from '@material-ui/icons/ExpandLess'
@@ -12,6 +9,8 @@ import ExpandLess from '@material-ui/icons/ExpandLess'
 import AnchorLink from 'react-anchor-link-smooth-scroll'
 
 import AppProvider from './providers/AppProvider'
+
+import SubscribeNewsletter from './components/SubscribeNewsletter'
 
 import background from './assets/images/basketball-basketball-hoop-basketball-ring-1040482.jpg'
 import logo from './assets/images/free_logo_19.svg'
@@ -53,12 +52,7 @@ const App = () => {
 					<p className={classes.slogan}>L'appli pour mettre en relation des joueurs de basketball.</p>
 					<Box>
 						<p className={classes.newsletterText}>Intéressé ? Inscris-toi à la newsletter.</p>
-						<Paper className={classes.newsletter}>
-							<InputBase variant="outlined" placeholder="ton email" />
-							<Button variant="contained" color="primary">
-								S'inscrire
-							</Button>
-						</Paper>
+						<SubscribeNewsletter />
 					</Box>
 					<Box>
 						<a
@@ -129,9 +123,6 @@ const useStyles = makeStyles({
 	},
 	arrowNextIcon: {
 		fontSize: '3rem'
-	},
-	newsletter: {
-		padding: '8px 8px 8px 16px'
 	},
 	newsletterText: {
 		fontSize: '0.8rem'
