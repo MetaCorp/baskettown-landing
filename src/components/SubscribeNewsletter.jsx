@@ -16,6 +16,18 @@ const tooltipTimeout = 5000
 
 const getAjaxUrl = (url) => url.replace('/post?', '/post-json?')
 
+const validateEmail = (email) => {
+	var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+	return re.test(String(email).toLowerCase())
+}
+
+const translateError = (err) => {
+	if (err.includes('This email cannot be added to this list'))
+		return 'Cet email ne peut pas être ajouter à la newsletter. Veuillez entrer une adresse email différente.'
+
+	return err
+}
+
 const SubscribeNewsletter = () => {
 	const classes = useStyles()
 
@@ -25,6 +37,13 @@ const SubscribeNewsletter = () => {
 	const [ message, setMessage ] = useState('')
 
 	const handleSubscribe = useCallback((data) => {
+		if (!validateEmail(data.EMAIL)) {
+			setMessage('Email non valide.')
+			setTooltipOpen(true)
+			setTimeout(() => setTooltipOpen(false), tooltipTimeout)
+			return
+		}
+
 		const params = toQueryString(data)
 		const url2 = getAjaxUrl(url) + '&' + params
 		setStatus('loading')
@@ -36,12 +55,12 @@ const SubscribeNewsletter = () => {
 			(err, data) => {
 				if (err) {
 					setStatus('error')
-					setMessage(err)
+					setMessage(translateError(err))
 					setTooltipOpen(true)
 					setTimeout(() => setTooltipOpen(false), tooltipTimeout)
 				} else if (data.result !== 'success') {
 					setStatus('error')
-					setMessage(data.msg)
+					setMessage(translateError(data.msg))
 					setTooltipOpen(true)
 					setTimeout(() => setTooltipOpen(false), tooltipTimeout)
 				} else {
@@ -70,7 +89,12 @@ const SubscribeNewsletter = () => {
 						variant="outlined"
 						placeholder="ton email"
 					/>
-					<Button className={classes.subscribe} variant="contained" color="primary" type="submit">
+					<Button
+						className={classes.subscribe}
+						variant="contained"
+						color="primary"
+						type="submit"
+						disabled={status === 'loading'}>
 						S'inscrire
 					</Button>
 				</Paper>

@@ -110,7 +110,9 @@ const useStyles = makeStyles({
 	slogan: {
 		fontSize: '1.2rem',
 		marginTop: 8,
-		textAlign: 'center'
+		textAlign: 'center',
+		paddingLeft: 16,
+		paddingRight: 16
 	},
 	arrowNext: {
 		position: 'absolute',
