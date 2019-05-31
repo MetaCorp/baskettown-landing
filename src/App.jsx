@@ -1,21 +1,14 @@
 import React, { useEffect, useState, useCallback } from 'react'
 import { makeStyles } from '@material-ui/styles'
 
-import Paper from '@material-ui/core/Paper'
-
-import ExpandMore from '@material-ui/icons/ExpandMore'
 import ExpandLess from '@material-ui/icons/ExpandLess'
 
 import AnchorLink from 'react-anchor-link-smooth-scroll'
 
 import AppProvider from './providers/AppProvider'
 
-import SubscribeNewsletter from './components/SubscribeNewsletter'
 import Project from './components/Project'
 import Home from './components/Home'
-
-import background from './assets/images/ball-basketball-basketball-court-1752757.jpg'
-import logo from './assets/images/free_logo_19.svg'
 
 const App = () => {
 	const classes = useStyles()

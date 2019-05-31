@@ -1,7 +1,13 @@
 import React from 'react'
 import { makeStyles } from '@material-ui/styles'
 
+import AnchorLink from 'react-anchor-link-smooth-scroll'
+import ExpandMore from '@material-ui/icons/ExpandMore'
+
 import SubscribeNewsletter from './SubscribeNewsletter'
+
+import background from './../assets/images/ball-basketball-basketball-court-1752757.jpg'
+import logo from './../assets/images/free_logo_19.svg'
 
 const Home = () => {
 	const classes = useStyles()
