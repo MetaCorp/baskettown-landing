@@ -7,7 +7,8 @@ import { makeStyles } from '@material-ui/styles'
 import InputBase from '@material-ui/core/InputBase'
 import Button from '@material-ui/core/Button'
 import Paper from '@material-ui/core/Paper'
-import Tooltip from '@material-ui/core/Tooltip'
+
+import SubscribeNewsletterTooltip from './SubscribeNewsletterTooltip'
 
 const url = 'https://gmail.us20.list-manage.com/subscribe/post?u=8d7edf0333642e86603b9a948&id=8dc71e9e5d'
 
@@ -80,7 +81,7 @@ const SubscribeNewsletter = () => {
 				e.preventDefault()
 				handleSubscribe({ EMAIL: email })
 			}}>
-			<Tooltip open={tooltipOpen} title={message}>
+			<SubscribeNewsletterTooltip open={tooltipOpen} title={message} placement="top">
 				<Paper className={classes.newsletter}>
 					<InputBase
 						value={email}
@@ -97,7 +98,7 @@ const SubscribeNewsletter = () => {
 						S'inscrire
 					</Button>
 				</Paper>
-			</Tooltip>
+			</SubscribeNewsletterTooltip>
 		</form>
 	)
 }
