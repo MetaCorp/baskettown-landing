@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useCallback } from 'react'
 import { makeStyles } from '@material-ui/styles'
 
-import Box from '@material-ui/core/Box'
+import Paper from '@material-ui/core/Paper'
 
 import ExpandMore from '@material-ui/icons/ExpandMore'
 import ExpandLess from '@material-ui/icons/ExpandLess'
@@ -12,7 +12,7 @@ import AppProvider from './providers/AppProvider'
 
 import SubscribeNewsletter from './components/SubscribeNewsletter'
 
-import background from './assets/images/basketball-basketball-hoop-basketball-ring-1040482.jpg'
+import background from './assets/images/ball-basketball-basketball-court-1752757.jpg'
 import logo from './assets/images/free_logo_19.svg'
 
 const App = () => {
@@ -38,51 +38,62 @@ const App = () => {
 	return (
 		<div className={classes.root}>
 			<AppProvider>
-				<Box
-					className={classes.section1}
-					display="flex"
-					flexDirection="column"
-					width="100%"
-					height="100vh"
-					justifyContent="center"
-					alignItems="center"
-					component="section"
-					id="landing">
+				<div className={classes.section1Bg} />
+
+				<section className={classes.section1} id="landing">
 					<img className={classes.logo} src={logo} alt="logo" />
-					<Box className={classes.title} component="h1">
-						FindMySquad
-					</Box>
+					<h1 className={classes.title} component="h1">
+						BasketTown
+					</h1>
 					<p className={classes.slogan}>L'appli pour mettre en relation des joueurs de basketball.</p>
-					<Box>
+					<div>
 						<p className={classes.newsletterText}>Intéressé ? Inscris-toi à la newsletter.</p>
 						<SubscribeNewsletter />
-					</Box>
-					<Box>
+					</div>
+					{/* <Box>
 						<a
 							target="_blank"
 							rel="noopener noreferrer"
 							href="https://docs.google.com/forms/d/e/1FAIpQLSdBqROP8U3D8dnAQZ3U3c9PILeGY8Kl42t9eZcLkmUSGNMbTw/viewform?usp=sf_link">
 							formulaire
 						</a>
-					</Box>
+					</Box> */}
 					<AnchorLink className={classes.arrowNext} href="#project">
 						<ExpandMore className={classes.arrowNextIcon} />
 					</AnchorLink>
-				</Box>
-				<Box
-					className={classes.section2}
-					component="section"
-					display="flex"
-					flexDirection="column"
-					width="100%"
-					height="100vh"
-					justifyContent="center"
-					alignItems="center"
-					id="project">
-					<h2>Notre projet</h2>
-					<p>Description</p>
-				</Box>
-				<Box component="footer">footer</Box>
+				</section>
+
+				<section className={classes.section2} id="project">
+					<h2 className={classes.featuresTitle}>Notre produit</h2>
+					<Paper className={classes.features}>
+						<h4 className={classes.featuresH1}>Fonctionnalité de Check-In</h4>
+						<p className={classes.featuresP1}>
+							Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+							labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+							laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
+							voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
+							cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+						</p>
+						<h4 className={classes.featuresH2}>Planifie ta présence</h4>
+						<p className={classes.featuresP2}>
+							Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+							labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+							laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
+							voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
+							cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+						</p>
+						<h4 className={classes.featuresH3}>Organise tes matchs</h4>
+						<p className={classes.featuresP3}>
+							Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+							labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+							laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
+							voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
+							cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+						</p>
+					</Paper>
+				</section>
+
+				<footer>footer</footer>
 				{scrollY > 100 && (
 					<AnchorLink className={classes.toTop} href="#landing">
 						<ExpandLess className={classes.toTopIcon} />
@@ -96,14 +107,36 @@ const App = () => {
 const useStyles = makeStyles({
 	root: {},
 	section1: {
+		position: 'relative',
+		color: 'white',
+		display: 'flex',
+		flexDirection: 'column',
+		width: '100%',
+		height: '100vh',
+		justifyContent: 'center',
+		alignItems: 'center'
+	},
+	section1Bg: {
+		position: 'absolute',
+		top: 0,
+		left: 0,
+		bottom: 0,
+		right: 0,
 		backgroundImage: `url(${background})`,
 		backgroundSize: 'cover',
 		backgroundPosition: 'center',
-		position: 'relative',
-		color: 'white'
+		filter: 'brightness(0.6)'
 	},
 	section2: {
-		position: 'relative'
+		position: 'relative',
+		component: 'section',
+		display: 'flex',
+		flexDirection: 'column',
+		width: '100%',
+		height: '100vh',
+		justifyContent: 'center',
+		alignItems: 'center',
+		background: 'black'
 	},
 	title: {
 		fontSize: '3rem',
@@ -140,7 +173,42 @@ const useStyles = makeStyles({
 		position: 'fixed',
 		bottom: 16,
 		right: 16,
-		color: 'black'
+		color: 'rgba(255, 255, 255, 0.7)',
+		'&:hover': {
+			color: 'white'
+		}
+	},
+	featuresTitle: {
+		color: 'rgba(255, 255, 255, 0.8)',
+		fontSize: '2rem'
+	},
+	features: {
+		maxWidth: 742,
+		padding: '16px 24px',
+		background: '#1C2024',
+		color: 'rgba(255, 255, 255, 0.7)',
+		marginTop: 8,
+		marginBottom: 64
+	},
+	featuresP1: {
+		fontSize: '0.9rem'
+	},
+	featuresP2: {
+		textAlign: 'right',
+		fontSize: '0.9rem'
+	},
+	featuresP3: {
+		fontSize: '0.9rem'
+	},
+	featuresH1: {
+		fontSize: '1.5rem'
+	},
+	featuresH2: {
+		textAlign: 'right',
+		fontSize: '1.5rem'
+	},
+	featuresH3: {
+		fontSize: '1.5rem'
 	}
 })
 
