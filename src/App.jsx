@@ -93,7 +93,7 @@ const App = () => {
 					</Paper>
 				</section>
 
-				<footer>footer</footer>
+				<footer className={classes.footer}>© 2019 BasketTown Inc. | All Rights Reserved.</footer>
 				{scrollY > 100 && (
 					<AnchorLink className={classes.toTop} href="#landing">
 						<ExpandLess className={classes.toTopIcon} />
@@ -133,7 +133,7 @@ const useStyles = makeStyles({
 		display: 'flex',
 		flexDirection: 'column',
 		width: '100%',
-		height: '100vh',
+		minHeight: '100vh',
 		justifyContent: 'center',
 		alignItems: 'center',
 		background: 'black'
@@ -209,6 +209,22 @@ const useStyles = makeStyles({
 	},
 	featuresH3: {
 		fontSize: '1.5rem'
+	},
+	footer: {
+		background: '#1C2024',
+		display: 'flex',
+		justifyContent: 'center',
+		height: 64,
+		alignItems: 'center',
+		color: 'rgba(255, 255, 255, 0.7)'
+	},
+	'@media (max-width: 812px)': {
+		featuresH2: {
+			textAlign: 'left'
+		},
+		featuresP2: {
+			textAlign: 'left'
+		}
 	}
 })
 
