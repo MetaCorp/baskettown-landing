@@ -161,11 +161,42 @@ const useStyles = makeStyles((theme) =>
 			marginRight: 150
 		},
 		'@media (max-width: 812px)': {
+			features: {
+				marginLeft: 16,
+				marginRight: 16
+			},
 			featuresH2: {
 				textAlign: 'left'
 			},
 			featuresP2: {
 				textAlign: 'left'
+			},
+			featuresImg1: {
+				display: 'none'
+			},
+			featuresImg2: {
+				display: 'none'
+			},
+			featuresImg3: {
+				display: 'none'
+			},
+			featuresContainer1: {
+				paddingLeft: 0
+			},
+			featuresContainer2: {
+				paddingRight: 0
+			},
+			featuresContainer3: {
+				paddingLeft: 0
+			},
+			hr1: {
+				marginRight: 0
+			},
+			hr2: {
+				marginLeft: 0
+			},
+			hr3: {
+				marginRight: 0
 			}
 		}
 	})
