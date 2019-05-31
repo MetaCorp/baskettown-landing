@@ -74,6 +74,7 @@ const App = () => {
 							voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
 							cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 						</p>
+						<hr className={classes.hr} />
 						<h4 className={classes.featuresH2}>Planifie ta présence</h4>
 						<p className={classes.featuresP2}>
 							Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
@@ -82,6 +83,7 @@ const App = () => {
 							voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
 							cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 						</p>
+						<hr className={classes.hr} />
 						<h4 className={classes.featuresH3}>Organise tes matchs</h4>
 						<p className={classes.featuresP3}>
 							Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
@@ -90,6 +92,7 @@ const App = () => {
 							voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
 							cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 						</p>
+						<hr className={classes.hr} />
 					</Paper>
 				</section>
 
@@ -173,20 +176,20 @@ const useStyles = makeStyles({
 		position: 'fixed',
 		bottom: 16,
 		right: 16,
-		color: 'rgba(255, 255, 255, 0.7)',
+		color: 'rgba(255, 255, 255, 0.8)',
 		'&:hover': {
 			color: 'white'
 		}
 	},
 	featuresTitle: {
-		color: 'rgba(255, 255, 255, 0.8)',
+		color: 'rgba(255, 255, 255, 0.9)',
 		fontSize: '2rem'
 	},
 	features: {
 		maxWidth: 742,
 		padding: '16px 24px',
 		background: '#1C2024',
-		color: 'rgba(255, 255, 255, 0.7)',
+		color: 'rgba(255, 255, 255, 0.8)',
 		marginTop: 8,
 		marginBottom: 64
 	},
@@ -216,7 +219,10 @@ const useStyles = makeStyles({
 		justifyContent: 'center',
 		height: 64,
 		alignItems: 'center',
-		color: 'rgba(255, 255, 255, 0.7)'
+		color: 'rgba(255, 255, 255, 0.8)'
+	},
+	hr: {
+		borderColor: 'rgba(255,255,255,0.4)'
 	},
 	'@media (max-width: 812px)': {
 		featuresH2: {
