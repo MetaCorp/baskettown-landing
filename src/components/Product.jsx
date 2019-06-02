@@ -2,16 +2,31 @@ import React from 'react'
 import { makeStyles, createStyles } from '@material-ui/styles'
 
 import Paper from '@material-ui/core/Paper'
+import Fade from "@material-ui/core/Fade";
+
+import OnVisible from "react-on-visible";
 
 import image1 from './../assets/images/ball-basketball-basketball-court-1752757.jpg'
+import { useSetState } from 'react-use';
 
-const Project = () => {
+const Produit = () => {
 	const classes = useStyles()
+	const [animationState, setAnimationState] = useSetState({
+		container1Shown: false,
+		container2Shown: false,
+		container3Shown: false,
+	})
 
 	return (
-		<section className={classes.section2} id="project">
+		<section className={classes.section2} id="product">
 			<h2 className={classes.featuresTitle}>Notre produit</h2>
 			<Paper className={classes.features}>
+			<OnVisible
+        onChange={e => {
+          setAnimationState({container1Shown: true});
+        }}
+      >
+				<Fade in={animationState.container1Shown} timeout={{ enter: 1500 }}>
 				<div className={classes.featuresContainer1}>
 					<img className={classes.featuresImg1} src={image1} alt="img1" />
 					<h4 className={classes.featuresH1}>Fonctionnalité de Check-In</h4>
@@ -23,9 +38,13 @@ const Project = () => {
 						non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 					</p>
 					<hr className={classes.hr1} />
-				</div>
+				</div></Fade></OnVisible>
 
-				<div className={classes.featuresContainer2}>
+				<OnVisible
+        onChange={e => {
+          setAnimationState({container2Shown: true});
+        }}
+      ><Fade in={animationState.container2Shown} timeout={{ enter: 1500 }}><div className={classes.featuresContainer2}>
 					<img className={classes.featuresImg2} src={image1} alt="img2" />
 					<h4 className={classes.featuresH2}>Planifie ta présence</h4>
 					<p className={classes.featuresP2}>
@@ -36,8 +55,13 @@ const Project = () => {
 						non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 					</p>
 					<hr className={classes.hr2} />
-				</div>
+				</div></Fade></OnVisible>
 
+				<OnVisible
+        onChange={e => {
+          setAnimationState({container3Shown: true});
+        }}
+      ><Fade in={animationState.container3Shown} timeout={{ enter: 1500 }}>
 				<div className={classes.featuresContainer3}>
 					<img className={classes.featuresImg3} src={image1} alt="img3" />
 					<h4 className={classes.featuresH3}>Organise tes matchs</h4>
@@ -49,7 +73,7 @@ const Project = () => {
 						non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 					</p>
 					{/* <hr className={classes.hr3} /> */}
-				</div>
+				</div></Fade></OnVisible>
 			</Paper>
 		</section>
 	)
@@ -204,4 +228,4 @@ const useStyles = makeStyles((theme) =>
 	})
 )
 
-export default Project
+export default Produit

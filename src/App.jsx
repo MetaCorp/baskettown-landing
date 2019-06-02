@@ -6,7 +6,7 @@ import IconButton from '@material-ui/core/IconButton'
 
 import AppProvider from "./providers/AppProvider";
 
-import Project from "./components/Project";
+import Product from "./components/Product";
 import Home from "./components/Home";
 import Team from "./components/Team";
 
@@ -32,7 +32,7 @@ const App = () => {
       <AppProvider>
         <Home />
 
-        <Project />
+        <Product />
 
         <Team />
 

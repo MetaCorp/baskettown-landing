@@ -9,7 +9,7 @@ import profile4 from './../assets/images/basketball-game-ocean-69773.jpg'
 const Team = () => {
 	const classes = useStyles()
 	return (
-		<div className={classes.root}>
+		<div className={classes.root} id="team">
 			<h2 className={classes.title}>Equipe</h2>
 			<div className={classes.container0}>
 				<div className={classes.container1}>

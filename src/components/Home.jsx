@@ -25,7 +25,6 @@ const Home = () => {
 
       <OnVisible
         onChange={e => {
-          console.log(e);
           setSectionShown(true);
         }}
       >
@@ -60,7 +59,7 @@ const Home = () => {
     </a>
 	</Box> */}
           <Zoom in={sectionShown} timeout={{ enter: 2000 }}>
-            <IconButton className={classes.arrowNext} href="#project">
+            <IconButton className={classes.arrowNext} href="#product">
               <ExpandMore className={classes.arrowNextIcon} />
             </IconButton>
           </Zoom>
