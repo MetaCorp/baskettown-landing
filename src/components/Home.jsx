@@ -7,7 +7,7 @@ import ExpandMore from '@material-ui/icons/ExpandMore'
 import SubscribeNewsletter from './SubscribeNewsletter'
 
 import background from './../assets/images/ball-basketball-basketball-court-1752757.jpg'
-import logo from './../assets/images/free_logo_19.svg'
+import logo from './../assets/images/logo.svg'
 
 const Home = () => {
 	const classes = useStyles()
