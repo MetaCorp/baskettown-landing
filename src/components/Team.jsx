@@ -10,24 +10,27 @@ const Team = () => {
 	const classes = useStyles()
 	return (
 		<div className={classes.root}>
-			<div className={classes.container1}>
-				<div className={classes.container2}>
-					<img className={classes.photo} src={profile1} alt="profile1" />
-					<h4 className={classes.name}>Léopold Szabatura</h4>
+			<h2 className={classes.title}>Equipe</h2>
+			<div className={classes.container0}>
+				<div className={classes.container1}>
+					<div className={classes.container2}>
+						<img className={classes.photo} src={profile1} alt="profile1" />
+						<h4 className={classes.name}>Léopold Szabatura</h4>
+					</div>
+					<div className={classes.container2}>
+						<img className={classes.photo} src={profile2} alt="profile2" />
+						<h4 className={classes.name}>Léopold Szabatura</h4>
+					</div>
 				</div>
-				<div className={classes.container2}>
-					<img className={classes.photo} src={profile2} alt="profile2" />
-					<h4 className={classes.name}>Léopold Szabatura</h4>
-				</div>
-			</div>
-			<div className={classes.container1}>
-				<div className={classes.container2}>
-					<img className={classes.photo} src={profile3} alt="profile3" />
-					<h4 className={classes.name}>Léopold Szabatura</h4>
-				</div>
-				<div className={classes.container2}>
-					<img className={classes.photo} src={profile4} alt="profile4" />
-					<h4 className={classes.name}>Léopold Szabatura</h4>
+				<div className={classes.container1}>
+					<div className={classes.container2}>
+						<img className={classes.photo} src={profile3} alt="profile3" />
+						<h4 className={classes.name}>Léopold Szabatura</h4>
+					</div>
+					<div className={classes.container2}>
+						<img className={classes.photo} src={profile4} alt="profile4" />
+						<h4 className={classes.name}>Léopold Szabatura</h4>
+					</div>
 				</div>
 			</div>
 		</div>
@@ -35,14 +38,24 @@ const Team = () => {
 }
 
 const useStyles = makeStyles({
+	title: {
+		fontSize: '2rem',
+		color: 'white'
+	},
 	root: {
 		display: 'flex',
-		flexDirection: 'row',
-		color: 'white',
+		flexDirection: 'column',
 		justifyContent: 'center',
 		alignItems: 'center',
 		paddingBottom: 64,
 		paddingTop: 64
+	},
+	container0: {
+		display: 'flex',
+		flexDirection: 'row',
+		color: 'white',
+		justifyContent: 'center',
+		alignItems: 'center'
 	},
 	container1: {
 		display: 'flex',
@@ -59,13 +72,13 @@ const useStyles = makeStyles({
 		textAlign: 'center'
 	},
 	'@media (max-width: 1200px)': {
-		root: {
+		container0: {
 			display: 'flex',
 			flexDirection: 'column'
 		}
 	},
 	'@media (max-width: 812px)': {
-		root: {
+		container0: {
 			display: 'flex',
 			flexDirection: 'column'
 		},

@@ -14,11 +14,11 @@ import Team from './components/Team'
 const App = () => {
 	const classes = useStyles()
 
-	const [ scrollY, setScrollY ] = useState(0)
+	const [ toTopVisible, setToTopVisible ] = useState(0)
 
 	const handleScroll = useCallback((e) => {
 		const bodyOffset = document.body.getBoundingClientRect()
-		setScrollY(-bodyOffset.top)
+		setToTopVisible(-bodyOffset.top > 100)
 	}, [])
 
 	useEffect(
@@ -41,7 +41,7 @@ const App = () => {
 				<Team />
 
 				<footer className={classes.footer}>© 2019 BasketTown Inc. | All Rights Reserved.</footer>
-				{scrollY > 100 && (
+				{toTopVisible && (
 					<AnchorLink className={classes.toTop} href="#landing">
 						<ExpandLess className={classes.toTopIcon} />
 					</AnchorLink>
