@@ -10,6 +10,7 @@
     "keyboardjs": "^2.5.1",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
+    "react-on-visible": "^1.6.0",
     "react-scripts": "3.0.1",
     "react-use": "^9.1.2",
     "rebound": "^0.1.0",
