@@ -2,7 +2,7 @@ import React, { useEffect, useState, useCallback } from 'react'
 import { makeStyles } from '@material-ui/styles'
 
 import ExpandLess from '@material-ui/icons/ExpandLess'
-import Fab from '@material-ui/core/Fab'
+import IconButton from '@material-ui/core/IconButton'
 
 import AppProvider from './providers/AppProvider'
 
@@ -41,9 +41,9 @@ const App = () => {
 
 				<footer className={classes.footer}>© 2019 BasketTown Inc. | All Rights Reserved.</footer>
 				{toTopVisible && (
-					<Fab color="primary" className={classes.toTop} href="#landing">
+					<IconButton className={classes.toTop} href="#landing">
 						<ExpandLess className={classes.toTopIcon} />
-					</Fab>
+					</IconButton>
 				)}
 			</AppProvider>
 		</div>
