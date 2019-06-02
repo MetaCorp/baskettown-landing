@@ -73,7 +73,9 @@ const useStyles = makeStyles((theme) =>
 		},
 		featuresTitle: {
 			color: 'rgba(255, 255, 255, 0.9)',
-			fontSize: '2rem'
+			fontSize: '2rem',
+			marginTop: 62,
+			marginBottom: 42
 		},
 		features: {
 			maxWidth: 742,

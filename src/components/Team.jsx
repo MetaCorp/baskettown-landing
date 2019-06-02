@@ -48,7 +48,7 @@ const useStyles = makeStyles({
 		justifyContent: 'center',
 		alignItems: 'center',
 		paddingBottom: 64,
-		paddingTop: 64
+		paddingTop: 16
 	},
 	container0: {
 		display: 'flex',
@@ -62,7 +62,7 @@ const useStyles = makeStyles({
 		flexDirection: 'row'
 	},
 	container2: {
-		margin: 24
+		margin: '24px 32px'
 	},
 	photo: {
 		width: 200,
