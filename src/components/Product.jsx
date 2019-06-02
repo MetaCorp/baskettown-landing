@@ -14,7 +14,7 @@ const FeaturesImg1 = posed.img({
 	visible: {
 		opacity: 1,
 		x: 0,
-		delay: 300
+		delay: 100
 	},
 	hidden: {
 		x: -10,
@@ -26,7 +26,7 @@ const FeaturesH1 = posed.h4({
 	visible: {
 		opacity: 1,
 		x: 0,
-		delay: 600
+		delay: 300
 	},
 	hidden: {
 		x: 20,
@@ -38,7 +38,7 @@ const FeaturesP1 = posed.p({
 	visible: {
 		opacity: 1,
 		x: 0,
-		delay: 800
+		delay: 400
 	},
 	hidden: {
 		x: 20,
@@ -49,7 +49,7 @@ const FeaturesP1 = posed.p({
 const FeaturesHr1 = posed.hr({
 	visible: {
 		opacity: 1,
-		delay: 1000
+		delay: 500
 	},
 	hidden: {
 		opacity: 0
@@ -60,7 +60,7 @@ const FeaturesImg2 = posed.img({
 	visible: {
 		opacity: 1,
 		x: 0,
-		delay: 1600
+		delay: 1000
 	},
 	hidden: {
 		x: 10,
@@ -72,7 +72,7 @@ const FeaturesH2 = posed.h4({
 	visible: {
 		opacity: 1,
 		x: 0,
-		delay: 2000
+		delay: 1200
 	},
 	hidden: {
 		x: -20,
@@ -84,7 +84,7 @@ const FeaturesP2 = posed.p({
 	visible: {
 		opacity: 1,
 		x: 0,
-		delay: 2200
+		delay: 1300
 	},
 	hidden: {
 		x: -20,
@@ -95,7 +95,7 @@ const FeaturesP2 = posed.p({
 const FeaturesHr2 = posed.hr({
 	visible: {
 		opacity: 1,
-		delay: 2400
+		delay: 1400
 	},
 	hidden: {
 		opacity: 0
@@ -106,7 +106,7 @@ const FeaturesImg3 = posed.img({
 	visible: {
 		opacity: 1,
 		x: 0,
-		delay: 3000
+		delay: 1900
 	},
 	hidden: {
 		x: -10,
@@ -118,7 +118,7 @@ const FeaturesH3 = posed.h4({
 	visible: {
 		opacity: 1,
 		x: 0,
-		delay: 3200
+		delay: 2100
 	},
 	hidden: {
 		x: 20,
@@ -130,7 +130,7 @@ const FeaturesP3 = posed.p({
 	visible: {
 		opacity: 1,
 		x: 0,
-		delay: 3400
+		delay: 2200
 	},
 	hidden: {
 		x: 20,

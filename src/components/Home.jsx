@@ -29,7 +29,7 @@ const H1 = posed.h1({
 	visible: {
 		y: 0,
 		opacity: 1,
-		delay: 800
+		delay: 700
 	},
 	hidden: {
 		y: -20,
@@ -41,7 +41,7 @@ const P = posed.p({
 	visible: {
 		y: 0,
 		opacity: 1,
-		delay: 1000
+		delay: 800
 	},
 	hidden: {
 		y: -20,
@@ -53,7 +53,7 @@ const Newsletter = posed.div({
 	visible: {
 		y: 0,
 		opacity: 1,
-		delay: 1500
+		delay: 1300
 	},
 	hidden: {
 		y: 10,
@@ -64,7 +64,7 @@ const Newsletter = posed.div({
 const Arrow = posed.div({
 	visible: {
 		opacity: 1,
-		delay: 2000
+		delay: 1800
 	},
 	hidden: {
 		opacity: 0
