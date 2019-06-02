@@ -9,6 +9,7 @@ import AppProvider from './providers/AppProvider'
 
 import Project from './components/Project'
 import Home from './components/Home'
+import Team from './components/Team'
 
 const App = () => {
 	const classes = useStyles()
@@ -36,6 +37,8 @@ const App = () => {
 				<Home />
 
 				<Project />
+
+				<Team />
 
 				<footer className={classes.footer}>© 2019 BasketTown Inc. | All Rights Reserved.</footer>
 				{scrollY > 100 && (

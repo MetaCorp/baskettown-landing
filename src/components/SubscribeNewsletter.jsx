@@ -106,13 +106,13 @@ const SubscribeNewsletter = () => {
 const useStyles = makeStyles({
 	newsletter: {
 		padding: '8px 8px 8px 16px',
-		maxWidth: 313,
+		maxWidth: 342,
 		maxHeight: 52
 	},
 	newsletterSuccess: {
-		maxWidth: 313,
+		maxWidth: 342,
 		maxHeight: 52,
-		minWidth: 313,
+		minWidth: 342,
 		minHeight: 52,
 		display: 'flex',
 		alignItems: 'center',

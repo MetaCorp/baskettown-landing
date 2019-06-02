@@ -82,8 +82,8 @@ const useStyles = makeStyles((theme) =>
 			color: 'rgba(255, 255, 255, 0.8)',
 			marginTop: 8,
 			marginBottom: 128,
-			marginLeft: 106,
-			marginRight: 106
+			marginLeft: 160,
+			marginRight: 160
 		},
 		featuresP1: {
 			fontSize: '0.9rem',
