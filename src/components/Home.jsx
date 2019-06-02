@@ -147,7 +147,7 @@ const Home = () => {
 					<iframe
 						title="google-form"
 						src="https://docs.google.com/forms/d/e/1FAIpQLSdBqROP8U3D8dnAQZ3U3c9PILeGY8Kl42t9eZcLkmUSGNMbTw/viewform?embedded=true"
-						width="640"
+						width={window.innerWidth <= 812 ? 340 : 640}
 						height="397"
 						frameborder="0"
 						marginheight="0"
@@ -235,10 +235,15 @@ const useStyles = makeStyles((theme) => ({
 	},
 	formModal: {
 		position: 'absolute',
-		width: 626,
+		width: 640,
 		backgroundColor: 'transparent',
 		// boxShadow: theme.shadows[5],
 		outline: 'none'
+	},
+	'@media (max-width: 812px)': {
+		formModal: {
+			width: 340
+		}
 	}
 }))
 
