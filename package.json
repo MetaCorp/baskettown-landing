@@ -9,7 +9,6 @@
     "jsonp": "^0.2.1",
     "keyboardjs": "^2.5.1",
     "react": "^16.8.6",
-    "react-anchor-link-smooth-scroll": "^1.0.12",
     "react-dom": "^16.8.6",
     "react-scripts": "3.0.1",
     "react-use": "^9.1.2",
