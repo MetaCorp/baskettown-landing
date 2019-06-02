@@ -147,7 +147,8 @@ const useStyles = makeStyles({
 		marginTop: 8,
 		textAlign: 'center',
 		paddingLeft: 16,
-		paddingRight: 16
+		paddingRight: 16,
+		marginBottom: 32
 	},
 	arrowNext: {
 		position: 'absolute',

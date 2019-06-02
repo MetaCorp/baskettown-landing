@@ -1,81 +1,210 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { makeStyles, createStyles } from '@material-ui/styles'
 
 import Paper from '@material-ui/core/Paper'
-import Fade from "@material-ui/core/Fade";
+import Fade from '@material-ui/core/Fade'
 
-import OnVisible from "react-on-visible";
+import OnVisible from 'react-on-visible'
+
+import posed from 'react-pose'
 
 import image1 from './../assets/images/ball-basketball-basketball-court-1752757.jpg'
-import { useSetState } from 'react-use';
+
+const FeaturesImg1 = posed.img({
+	visible: {
+		opacity: 1,
+		delay: 500
+	},
+	hidden: {
+		opacity: 0
+	}
+})
+
+const FeaturesH1 = posed.h4({
+	visible: {
+		opacity: 1,
+		delay: 1000
+	},
+	hidden: {
+		opacity: 0
+	}
+})
+
+const FeaturesP1 = posed.p({
+	visible: {
+		opacity: 1,
+		delay: 1500
+	},
+	hidden: {
+		opacity: 0
+	}
+})
+
+const FeaturesHr1 = posed.hr({
+	visible: {
+		opacity: 1,
+		delay: 2000
+	},
+	hidden: {
+		opacity: 0
+	}
+})
+
+const FeaturesImg2 = posed.img({
+	visible: {
+		opacity: 1,
+		delay: 2500
+	},
+	hidden: {
+		opacity: 0
+	}
+})
+
+const FeaturesH2 = posed.h4({
+	visible: {
+		opacity: 1,
+		delay: 3000
+	},
+	hidden: {
+		opacity: 0
+	}
+})
+
+const FeaturesP2 = posed.p({
+	visible: {
+		opacity: 1,
+		delay: 3500
+	},
+	hidden: {
+		opacity: 0
+	}
+})
+
+const FeaturesHr2 = posed.hr({
+	visible: {
+		opacity: 1,
+		delay: 4000
+	},
+	hidden: {
+		opacity: 0
+	}
+})
+
+const FeaturesImg3 = posed.img({
+	visible: {
+		opacity: 1,
+		delay: 4500
+	},
+	hidden: {
+		opacity: 0
+	}
+})
+
+const FeaturesH3 = posed.h4({
+	visible: {
+		opacity: 1,
+		delay: 5000
+	},
+	hidden: {
+		opacity: 0
+	}
+})
+
+const FeaturesP3 = posed.p({
+	visible: {
+		opacity: 1,
+		delay: 5500
+	},
+	hidden: {
+		opacity: 0
+	}
+})
+
+const FeaturesHr3 = posed.hr({
+	visible: {
+		opacity: 1,
+		delay: 6000
+	},
+	hidden: {
+		opacity: 0
+	}
+})
 
 const Produit = () => {
 	const classes = useStyles()
-	const [animationState, setAnimationState] = useSetState({
-		container1Shown: false,
-		container2Shown: false,
-		container3Shown: false,
-	})
+
+	const [ sectionShown, setSectionShown ] = useState(false)
 
 	return (
-		<section className={classes.section2} id="product">
-			<h2 className={classes.featuresTitle}>Notre produit</h2>
-			<Paper className={classes.features}>
-			<OnVisible
-        onChange={e => {
-          setAnimationState({container1Shown: true});
-        }}
-      >
-				<Fade in={animationState.container1Shown} timeout={{ enter: 1500 }}>
-				<div className={classes.featuresContainer1}>
-					<img className={classes.featuresImg1} src={image1} alt="img1" />
-					<h4 className={classes.featuresH1}>Fonctionnalité de Check-In</h4>
-					<p className={classes.featuresP1}>
-						Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-						labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-						laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
-						voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat
-						non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-					</p>
-					<hr className={classes.hr1} />
-				</div></Fade></OnVisible>
+		<OnVisible
+			onChange={(e) => {
+				setSectionShown(true)
+			}}>
+			<section className={classes.section2} id="product">
+				<h2 className={classes.featuresTitle}>Notre produit</h2>
+				<Paper className={classes.features}>
+					<div className={classes.featuresContainer1}>
+						<FeaturesImg1
+							pose={sectionShown ? 'visible' : 'hidden'}
+							className={classes.featuresImg1}
+							src={image1}
+							alt="img1"
+						/>
+						<FeaturesH1 pose={sectionShown ? 'visible' : 'hidden'} className={classes.featuresH1}>
+							Fonctionnalité de Check-In
+						</FeaturesH1>
+						<FeaturesP1 pose={sectionShown ? 'visible' : 'hidden'} className={classes.featuresP1}>
+							Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+							labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+							laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
+							voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
+							cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+						</FeaturesP1>
+						<FeaturesHr1 pose={sectionShown ? 'visible' : 'hidden'} className={classes.hr1} />
+					</div>
 
-				<OnVisible
-        onChange={e => {
-          setAnimationState({container2Shown: true});
-        }}
-      ><Fade in={animationState.container2Shown} timeout={{ enter: 1500 }}><div className={classes.featuresContainer2}>
-					<img className={classes.featuresImg2} src={image1} alt="img2" />
-					<h4 className={classes.featuresH2}>Planifie ta présence</h4>
-					<p className={classes.featuresP2}>
-						Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-						labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-						laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
-						voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat
-						non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-					</p>
-					<hr className={classes.hr2} />
-				</div></Fade></OnVisible>
+					<div className={classes.featuresContainer2}>
+						<FeaturesImg2
+							pose={sectionShown ? 'visible' : 'hidden'}
+							className={classes.featuresImg2}
+							src={image1}
+							alt="img2"
+						/>
+						<FeaturesH2 pose={sectionShown ? 'visible' : 'hidden'} className={classes.featuresH2}>
+							Planifie ta présence
+						</FeaturesH2>
+						<FeaturesP2 pose={sectionShown ? 'visible' : 'hidden'} className={classes.featuresP2}>
+							Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+							labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+							laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
+							voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
+							cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+						</FeaturesP2>
+						<FeaturesHr2 pose={sectionShown ? 'visible' : 'hidden'} className={classes.hr2} />
+					</div>
 
-				<OnVisible
-        onChange={e => {
-          setAnimationState({container3Shown: true});
-        }}
-      ><Fade in={animationState.container3Shown} timeout={{ enter: 1500 }}>
-				<div className={classes.featuresContainer3}>
-					<img className={classes.featuresImg3} src={image1} alt="img3" />
-					<h4 className={classes.featuresH3}>Organise tes matchs</h4>
-					<p className={classes.featuresP3}>
-						Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-						labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-						laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
-						voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat
-						non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-					</p>
-					{/* <hr className={classes.hr3} /> */}
-				</div></Fade></OnVisible>
-			</Paper>
-		</section>
+					<div className={classes.featuresContainer3}>
+						<FeaturesImg3
+							pose={sectionShown ? 'visible' : 'hidden'}
+							className={classes.featuresImg3}
+							src={image1}
+							alt="img3"
+						/>
+						<FeaturesH3 pose={sectionShown ? 'visible' : 'hidden'} className={classes.featuresH3}>
+							Organise tes matchs
+						</FeaturesH3>
+						<FeaturesP3 pose={sectionShown ? 'visible' : 'hidden'} className={classes.featuresP3}>
+							Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+							labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+							laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
+							voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
+							cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+						</FeaturesP3>
+						{/* <hr className={classes.hr3} /> */}
+					</div>
+				</Paper>
+			</section>
+		</OnVisible>
 	)
 }
 
