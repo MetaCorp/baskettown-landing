@@ -13,14 +13,40 @@ import image1 from './../assets/images/ball-basketball-basketball-court-1752757.
 const FeaturesImg1 = posed.img({
 	visible: {
 		opacity: 1,
-		delay: 500
+		x: 0,
+		delay: 300
 	},
 	hidden: {
+		x: -10,
 		opacity: 0
 	}
 })
 
 const FeaturesH1 = posed.h4({
+	visible: {
+		opacity: 1,
+		x: 0,
+		delay: 600
+	},
+	hidden: {
+		x: 20,
+		opacity: 0
+	}
+})
+
+const FeaturesP1 = posed.p({
+	visible: {
+		opacity: 1,
+		x: 0,
+		delay: 800
+	},
+	hidden: {
+		x: 20,
+		opacity: 0
+	}
+})
+
+const FeaturesHr1 = posed.hr({
 	visible: {
 		opacity: 1,
 		delay: 1000
@@ -30,32 +56,14 @@ const FeaturesH1 = posed.h4({
 	}
 })
 
-const FeaturesP1 = posed.p({
-	visible: {
-		opacity: 1,
-		delay: 1500
-	},
-	hidden: {
-		opacity: 0
-	}
-})
-
-const FeaturesHr1 = posed.hr({
-	visible: {
-		opacity: 1,
-		delay: 2000
-	},
-	hidden: {
-		opacity: 0
-	}
-})
-
 const FeaturesImg2 = posed.img({
 	visible: {
 		opacity: 1,
-		delay: 2500
+		x: 0,
+		delay: 1600
 	},
 	hidden: {
+		x: 10,
 		opacity: 0
 	}
 })
@@ -63,9 +71,11 @@ const FeaturesImg2 = posed.img({
 const FeaturesH2 = posed.h4({
 	visible: {
 		opacity: 1,
-		delay: 3000
+		x: 0,
+		delay: 2000
 	},
 	hidden: {
+		x: -20,
 		opacity: 0
 	}
 })
@@ -73,9 +83,11 @@ const FeaturesH2 = posed.h4({
 const FeaturesP2 = posed.p({
 	visible: {
 		opacity: 1,
-		delay: 3500
+		x: 0,
+		delay: 2200
 	},
 	hidden: {
+		x: -20,
 		opacity: 0
 	}
 })
@@ -83,7 +95,7 @@ const FeaturesP2 = posed.p({
 const FeaturesHr2 = posed.hr({
 	visible: {
 		opacity: 1,
-		delay: 4000
+		delay: 2400
 	},
 	hidden: {
 		opacity: 0
@@ -93,9 +105,11 @@ const FeaturesHr2 = posed.hr({
 const FeaturesImg3 = posed.img({
 	visible: {
 		opacity: 1,
-		delay: 4500
+		x: 0,
+		delay: 3000
 	},
 	hidden: {
+		x: -10,
 		opacity: 0
 	}
 })
@@ -103,9 +117,11 @@ const FeaturesImg3 = posed.img({
 const FeaturesH3 = posed.h4({
 	visible: {
 		opacity: 1,
-		delay: 5000
+		x: 0,
+		delay: 3200
 	},
 	hidden: {
+		x: 20,
 		opacity: 0
 	}
 })
@@ -113,22 +129,24 @@ const FeaturesH3 = posed.h4({
 const FeaturesP3 = posed.p({
 	visible: {
 		opacity: 1,
-		delay: 5500
+		x: 0,
+		delay: 3400
 	},
 	hidden: {
+		x: 20,
 		opacity: 0
 	}
 })
 
-const FeaturesHr3 = posed.hr({
-	visible: {
-		opacity: 1,
-		delay: 6000
-	},
-	hidden: {
-		opacity: 0
-	}
-})
+// const FeaturesHr3 = posed.hr({
+// 	visible: {
+// 		opacity: 1,
+// 		delay: 6000
+// 	},
+// 	hidden: {
+// 		opacity: 0
+// 	}
+// })
 
 const Produit = () => {
 	const classes = useStyles()
