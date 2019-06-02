@@ -2,7 +2,10 @@ import React, { useState } from 'react'
 import { makeStyles } from '@material-ui/styles'
 
 import IconButton from '@material-ui/core/IconButton'
+import Button from '@material-ui/core/Button'
+import Modal from '@material-ui/core/Modal'
 import ExpandMore from '@material-ui/icons/ExpandMore'
+import Assignment from '@material-ui/icons/Assignment'
 
 import OnVisible from 'react-on-visible'
 
@@ -71,9 +74,24 @@ const Arrow = posed.div({
 	}
 })
 
+const FormAnim = posed.div({
+	visible: {
+		x: 0,
+		delay: 2000,
+		transition: {
+			duration: 400,
+			ease: 'easeInOut'
+		}
+	},
+	hidden: {
+		x: 64
+	}
+})
+
 const Home = () => {
 	const classes = useStyles()
 	const [ sectionShown, setSectionShown ] = useState(false)
+	const [ formModalOpen, setFormModalOpen ] = useState(false)
 
 	return (
 		<React.Fragment>
@@ -109,13 +127,40 @@ const Home = () => {
 							<ExpandMore className={classes.arrowNextIcon} />
 						</IconButton>
 					</Arrow>
+					<FormAnim pose={sectionShown ? 'visible' : 'hidden'} className={classes.formButtonContainer}>
+						<Button
+							onClick={() => setFormModalOpen(true)}
+							variant="contained"
+							className={classes.formButton}>
+							<Assignment />
+						</Button>
+					</FormAnim>
 				</section>
 			</OnVisible>
+			<Modal
+				className={classes.formModalContainer}
+				aria-labelledby="simple-modal-title"
+				aria-describedby="simple-modal-description"
+				open={formModalOpen}
+				onClose={() => setFormModalOpen(false)}>
+				<div className={classes.formModal}>
+					<iframe
+						title="google-form"
+						src="https://docs.google.com/forms/d/e/1FAIpQLSdBqROP8U3D8dnAQZ3U3c9PILeGY8Kl42t9eZcLkmUSGNMbTw/viewform?embedded=true"
+						width="640"
+						height="397"
+						frameborder="0"
+						marginheight="0"
+						marginwidth="0">
+						Loading...
+					</iframe>
+				</div>
+			</Modal>
 		</React.Fragment>
 	)
 }
 
-const useStyles = makeStyles({
+const useStyles = makeStyles((theme) => ({
 	section1: {
 		position: 'relative',
 		color: 'white',
@@ -170,7 +215,31 @@ const useStyles = makeStyles({
 	logo: {
 		marginTop: -52,
 		width: 196
+	},
+	formButtonContainer: {
+		position: 'fixed',
+		right: 0,
+		top: 80,
+		zIndex: 1
+	},
+	formButton: {
+		borderTopRightRadius: 0,
+		borderBottomRightRadius: 0
+	},
+	formModalContainer: {
+		display: 'flex',
+		alignItems: 'center',
+		justifyContent: 'center',
+		width: '100vw',
+		height: '100vh'
+	},
+	formModal: {
+		position: 'absolute',
+		width: 626,
+		backgroundColor: 'transparent',
+		// boxShadow: theme.shadows[5],
+		outline: 'none'
 	}
-})
+}))
 
 export default Home
