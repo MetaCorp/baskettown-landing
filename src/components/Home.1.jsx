@@ -25,7 +25,6 @@ const Home = () => {
 
       <OnVisible
         onChange={e => {
-          console.log(e);
           setSectionShown(true);
         }}
       >
