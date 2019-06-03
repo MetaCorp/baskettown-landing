@@ -26,7 +26,7 @@ const ToTop = posed.div({
 const App = () => {
 	const classes = useStyles()
 
-	const [ toTopVisible, setToTopVisible ] = useState(0)
+	const [ toTopVisible, setToTopVisible ] = useState(false)
 
 	const handleScroll = useCallback((e) => {
 		const bodyOffset = document.body.getBoundingClientRect()
@@ -55,8 +55,8 @@ const App = () => {
 				<footer className={classes.footer}>© 2019 BasketTown Inc. | All Rights Reserved.</footer>
 
 				<ToTop pose={toTopVisible ? 'visible' : 'hidden'}>
-					<Tooltip enterDelay="700" title="Remonter" aria-label="Remonter">
-						<Fab color="secondary" className={classes.toTop} href="#landing">
+					<Tooltip enterDelay="700" title="Remonter" aria-label="Remonter" placement="left" disableFocusListener={!toTopVisible} disableHoverListener={!toTopVisible} disableTouchListener={!toTopVisible}>
+						<Fab color="secondary" className={classes.toTop} href="#landing" style={{display: !toTopVisible ? 'none': 'flex'}}>
 							<ExpandLess className={classes.toTopIcon} />
 						</Fab>
 					</Tooltip>
