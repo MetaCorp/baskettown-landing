@@ -4,6 +4,7 @@ import { makeStyles } from '@material-ui/styles'
 import IconButton from '@material-ui/core/IconButton'
 import Button from '@material-ui/core/Button'
 import Modal from '@material-ui/core/Modal'
+import Tooltip from '@material-ui/core/Tooltip'
 import ExpandMore from '@material-ui/icons/ExpandMore'
 import Assignment from '@material-ui/icons/Assignment'
 
@@ -122,17 +123,21 @@ const Home = () => {
     </a>
 	</Box> */}
 					<Arrow className={classes.arrowNext} pose={sectionShown ? 'visible' : 'hidden'}>
-						<IconButton className={classes.arrowNext} disableRipple href="#product">
-							<ExpandMore className={classes.arrowNextIcon} />
-						</IconButton>
+						<Tooltip enterDelay="700" title="Aller à la page produit" aria-label="Aller à la page produit">
+							<IconButton className={classes.arrowNext} disableRipple href="#product">
+								<ExpandMore className={classes.arrowNextIcon} />
+							</IconButton>
+						</Tooltip>
 					</Arrow>
 					<FormAnim pose={sectionShown ? 'visible' : 'hidden'} className={classes.formButtonContainer}>
-						<Button
-							onClick={() => setFormModalOpen(true)}
-							variant="contained"
-							className={classes.formButton}>
-							<Assignment />
-						</Button>
+						<Tooltip enterDelay="700" title="Donner son avis" aria-label="Donner son avis">
+							<Button
+								onClick={() => setFormModalOpen(true)}
+								variant="contained"
+								className={classes.formButton}>
+								<Assignment />
+							</Button>
+						</Tooltip>
 					</FormAnim>
 				</section>
 			</OnVisible>
@@ -147,7 +152,7 @@ const Home = () => {
 						title="google-form"
 						src="https://docs.google.com/forms/d/e/1FAIpQLSdBqROP8U3D8dnAQZ3U3c9PILeGY8Kl42t9eZcLkmUSGNMbTw/viewform?embedded=true"
 						width={window.innerWidth <= 812 ? 340 : 640}
-						height="397"
+						height={window.innerWidth <= 812 ? 480 : 540}
 						frameBorder="0"
 						marginHeight="0"
 						marginWidth="0">
@@ -218,12 +223,12 @@ const useStyles = makeStyles((theme) => ({
 	formButtonContainer: {
 		position: 'fixed',
 		right: 0,
-		top: '10%',
-    zIndex: 1
+		top: '12%',
+		zIndex: 1
 	},
 	formButton: {
 		borderTopRightRadius: 0,
-    borderBottomRightRadius: 0
+		borderBottomRightRadius: 0
 	},
 	formModalContainer: {
 		display: 'flex',
