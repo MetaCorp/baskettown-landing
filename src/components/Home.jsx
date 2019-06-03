@@ -5,7 +5,7 @@ import IconButton from '@material-ui/core/IconButton'
 import Button from '@material-ui/core/Button'
 import Modal from '@material-ui/core/Modal'
 import ExpandMore from '@material-ui/icons/ExpandMore'
-import Feedback from '@material-ui/icons/Feedback'
+import Assignment from '@material-ui/icons/Assignment'
 
 import OnVisible from 'react-on-visible'
 
@@ -132,7 +132,7 @@ const Home = () => {
 							onClick={() => setFormModalOpen(true)}
 							variant="contained"
 							className={classes.formButton}>
-							<Feedback />
+							<Assignment />
 						</Button>
 					</FormAnim>
 				</section>
