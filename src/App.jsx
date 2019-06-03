@@ -51,7 +51,7 @@ const App = () => {
 				<footer className={classes.footer}>© 2019 BasketTown Inc. | All Rights Reserved.</footer>
 				
           <ToTop pose={toTopVisible ? 'visible' : 'hidden'}>
-					<Fab color="primary" className={classes.toTop} href="#landing">
+					<Fab color="secondary" className={classes.toTop} href="#landing">
 						<ExpandLess className={classes.toTopIcon} />
 					</Fab>
           </ToTop>
