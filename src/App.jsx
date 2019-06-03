@@ -2,13 +2,25 @@ import React, { useEffect, useState, useCallback } from "react";
 import { makeStyles } from "@material-ui/styles";
 
 import ExpandLess from '@material-ui/icons/ExpandLess'
-import IconButton from '@material-ui/core/IconButton'
+import Fab from '@material-ui/core/Fab'
+
+import posed from 'react-pose'
 
 import AppProvider from "./providers/AppProvider";
 
 import Product from "./components/Product";
 import Home from "./components/Home";
 import Team from "./components/Team";
+
+const ToTop = posed.div({
+	visible: {
+		opacity: 1,
+		delay: 200
+	},
+	hidden: {
+		opacity: 0
+	}
+})
 
 const App = () => {
   const classes = useStyles();
@@ -37,11 +49,13 @@ const App = () => {
         <Team />
 
 				<footer className={classes.footer}>© 2019 BasketTown Inc. | All Rights Reserved.</footer>
-				{toTopVisible && (
-					<IconButton className={classes.toTop} href="#landing">
+				
+          <ToTop pose={toTopVisible ? 'visible' : 'hidden'}>
+					<Fab color="secondary" className={classes.toTop} href="#landing">
 						<ExpandLess className={classes.toTopIcon} />
-					</IconButton>
-				)}
+					</Fab>
+          </ToTop>
+				
 			</AppProvider>
 		</div>
 	)

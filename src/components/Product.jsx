@@ -2,7 +2,6 @@ import React, { useState } from 'react'
 import { makeStyles, createStyles } from '@material-ui/styles'
 
 import Paper from '@material-ui/core/Paper'
-import Fade from '@material-ui/core/Fade'
 
 import OnVisible from 'react-on-visible'
 

@@ -102,7 +102,6 @@ const Team = () => {
 	return (
 		<OnVisible
 			onChange={(e) => {
-				console.log(e)
 				setSectionShown(true)
 			}}>
 			<div className={classes.root} id="team">

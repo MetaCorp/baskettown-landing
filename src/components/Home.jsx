@@ -99,7 +99,6 @@ const Home = () => {
 
 			<OnVisible
 				onChange={(e) => {
-					console.log(e)
 					setSectionShown(true)
 				}}>
 				<section className={classes.section1} id="landing">
@@ -149,9 +148,9 @@ const Home = () => {
 						src="https://docs.google.com/forms/d/e/1FAIpQLSdBqROP8U3D8dnAQZ3U3c9PILeGY8Kl42t9eZcLkmUSGNMbTw/viewform?embedded=true"
 						width={window.innerWidth <= 812 ? 340 : 640}
 						height="397"
-						frameborder="0"
-						marginheight="0"
-						marginwidth="0">
+						frameBorder="0"
+						marginHeight="0"
+						marginWidth="0">
 						Loading...
 					</iframe>
 				</div>
@@ -219,12 +218,12 @@ const useStyles = makeStyles((theme) => ({
 	formButtonContainer: {
 		position: 'fixed',
 		right: 0,
-		top: 80,
-		zIndex: 1
+		top: '10%',
+    zIndex: 1
 	},
 	formButton: {
 		borderTopRightRadius: 0,
-		borderBottomRightRadius: 0
+    borderBottomRightRadius: 0
 	},
 	formModalContainer: {
 		display: 'flex',

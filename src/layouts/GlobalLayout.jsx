@@ -22,7 +22,7 @@ const GlobalLayout = props => {
   return (
     <div
       className={classnames(classes.root, className)}
-      onScroll={e => console.log(e)}
+      onScroll={e => {}}
       {...restProps}
     >
       <NavBar hideBackground={hideBackground} />

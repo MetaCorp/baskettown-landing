@@ -126,7 +126,8 @@ const useStyles = makeStyles({
     justifyContent: "center"
   },
   subscribe: {
-    marginLeft: 8
+    marginLeft: 8,
+    color: 'white'
   }
 });
 
