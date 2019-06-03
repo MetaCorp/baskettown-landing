@@ -128,7 +128,6 @@ const Home = () => {
 					</Arrow>
 					<FormAnim pose={sectionShown ? 'visible' : 'hidden'} className={classes.formButtonContainer}>
 						<Button
-              color="primary"
 							onClick={() => setFormModalOpen(true)}
 							variant="contained"
 							className={classes.formButton}>
@@ -224,8 +223,7 @@ const useStyles = makeStyles((theme) => ({
 	},
 	formButton: {
 		borderTopRightRadius: 0,
-    borderBottomRightRadius: 0,
-    color: 'white'
+    borderBottomRightRadius: 0
 	},
 	formModalContainer: {
 		display: 'flex',
