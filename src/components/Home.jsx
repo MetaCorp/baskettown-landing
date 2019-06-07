@@ -123,18 +123,14 @@ const Home = () => {
     </a>
 	</Box> */}
 					<Arrow className={classes.arrowNext} pose={sectionShown ? 'visible' : 'hidden'}>
-						<Tooltip
-							enterDelay="700"
-							title="Aller à la page produit"
-							aria-label="Aller à la page produit"
-							placement="top">
+						<Tooltip enterDelay={700} title="Aller à la page produit" aria-label="Aller à la page produit" placement="top">
 							<IconButton className={classes.arrowNext} href="#product" size="small">
 								<ExpandMore className={classes.arrowNextIcon} />
 							</IconButton>
 						</Tooltip>
 					</Arrow>
 					<FormAnim pose={sectionShown ? 'visible' : 'hidden'} className={classes.formButtonContainer}>
-						<Tooltip enterDelay="700" title="Donner son avis" aria-label="Donner son avis" placement="left">
+						<Tooltip enterDelay={700} title="Donner son avis" aria-label="Donner son avis" placement="left">
 							<Button
 								onClick={() => setFormModalOpen(true)}
 								variant="contained"
