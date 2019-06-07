@@ -55,8 +55,19 @@ const App = () => {
 				<footer className={classes.footer}>© 2019 BasketTown Inc. | All Rights Reserved.</footer>
 
 				<ToTop pose={toTopVisible ? 'visible' : 'hidden'}>
-					<Tooltip enterDelay="700" title="Remonter" aria-label="Remonter" placement="left" disableFocusListener={!toTopVisible} disableHoverListener={!toTopVisible} disableTouchListener={!toTopVisible}>
-						<Fab color="secondary" className={classes.toTop} href="#landing" style={{display: !toTopVisible ? 'none': 'flex'}}>
+					<Tooltip
+						enterDelay={700}
+						title="Remonter"
+						aria-label="Remonter"
+						placement="left"
+						disableFocusListener={!toTopVisible}
+						disableHoverListener={!toTopVisible}
+						disableTouchListener={!toTopVisible}>
+						<Fab
+							color="secondary"
+							className={classes.toTop}
+							href="#landing"
+							style={{ display: !toTopVisible ? 'none' : 'flex' }}>
 							<ExpandLess className={classes.toTopIcon} />
 						</Fab>
 					</Tooltip>

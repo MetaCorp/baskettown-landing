@@ -5,7 +5,7 @@ import posed from 'react-pose'
 
 import profile1 from './../assets/images/photo_2019-06-02_19-09-43.jpg'
 import profile2 from './../assets/images/photo_2019-06-02_18-45-00.jpg'
-import profile3 from './../assets/images/0035_35-Dylan_Merigaud.jpg'
+// import profile3 from './../assets/images/0035_35-Dylan_Merigaud.jpg'
 import profile4 from './../assets/images/0040_40-Leopold_Szabatura.jpg'
 
 const Img1 = posed.img({
@@ -132,7 +132,7 @@ const Team = () => {
 						</div>
 					</div>
 					<div className={classes.container1}>
-						<div className={classes.container2}>
+						{/* <div className={classes.container2}>
 							<Img3
 								pose={sectionShown ? 'visible' : 'hidden'}
 								className={classes.photo3}
@@ -142,7 +142,7 @@ const Team = () => {
 							<H3 pose={sectionShown ? 'visible' : 'hidden'} className={classes.name}>
 								Dylan Merigaud
 							</H3>
-						</div>
+						</div> */}
 						<div className={classes.container2}>
 							<Img4
 								pose={sectionShown ? 'visible' : 'hidden'}
@@ -217,7 +217,11 @@ const useStyles = makeStyles({
 	'@media (max-width: 1200px)': {
 		container0: {
 			display: 'flex',
-			flexDirection: 'column'
+			flexDirection: 'row'
+		},
+		container1: {
+			display: 'flex',
+			flexDirection: 'row'
 		}
 	},
 	'@media (max-width: 812px)': {

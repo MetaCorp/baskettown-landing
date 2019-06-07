@@ -123,7 +123,11 @@ const Home = () => {
     </a>
 	</Box> */}
 					<Arrow className={classes.arrowNext} pose={sectionShown ? 'visible' : 'hidden'}>
-						<Tooltip enterDelay="700" title="Aller à la page produit" aria-label="Aller à la page produit" placement="top">
+						<Tooltip
+							enterDelay="700"
+							title="Aller à la page produit"
+							aria-label="Aller à la page produit"
+							placement="top">
 							<IconButton className={classes.arrowNext} href="#product" size="small">
 								<ExpandMore className={classes.arrowNextIcon} />
 							</IconButton>
@@ -204,7 +208,7 @@ const useStyles = makeStyles((theme) => ({
 		bottom: 16,
 		color: 'white',
 		transition: 'transform ease-in-out 0.25s',
-		marginLeft: -18,
+		marginLeft: -16,
 		'&:hover $arrowNextIcon': {
 			transform: 'translateY(4px)'
 		}
@@ -247,6 +251,9 @@ const useStyles = makeStyles((theme) => ({
 	'@media (max-width: 812px)': {
 		formModal: {
 			width: 340
+		},
+		arrowNext: {
+			marginLeft: -13
 		}
 	}
 }))
