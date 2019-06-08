@@ -14,7 +14,7 @@ import posed from 'react-pose'
 
 import SubscribeNewsletter from './SubscribeNewsletter'
 
-import background from './../assets/images/ball-basketball-basketball-court-1752757.jpg'
+import background from './../assets/images/basketball-game-ocean-69773.jpg'
 import logo from './../assets/images/logo.svg'
 
 const Logo = posed.img({
@@ -105,7 +105,7 @@ const Home = () => {
 				<section className={classes.section1} id="landing">
 					<Logo className={classes.logo} src={logo} alt="logo" pose={sectionShown ? 'visible' : 'hidden'} />
 					<H1 className={classes.title} pose={sectionShown ? 'visible' : 'hidden'}>
-						BasketTown
+						Fadaway
 					</H1>
 					<P className={classes.slogan} pose={sectionShown ? 'visible' : 'hidden'}>
 						L'appli pour mettre en relation des joueurs de basketball.
@@ -123,7 +123,11 @@ const Home = () => {
     </a>
 	</Box> */}
 					<Arrow className={classes.arrowNext} pose={sectionShown ? 'visible' : 'hidden'}>
-						<Tooltip enterDelay={700} title="Aller à la page produit" aria-label="Aller à la page produit" placement="top">
+						<Tooltip
+							enterDelay={700}
+							title="Aller à la page produit"
+							aria-label="Aller à la page produit"
+							placement="top">
 							<IconButton className={classes.arrowNext} href="#product" size="small">
 								<ExpandMore className={classes.arrowNextIcon} />
 							</IconButton>

@@ -8,6 +8,7 @@ import OnVisible from 'react-on-visible'
 import posed from 'react-pose'
 
 import image1 from './../assets/images/ball-basketball-basketball-court-1752757.jpg'
+import image2 from './../assets/images/basketball-basketball-hoop-basketball-ring-1040482.jpg'
 
 const FeaturesImg1 = posed.img({
 	visible: {
@@ -137,7 +138,53 @@ const FeaturesP3 = posed.p({
 	}
 })
 
-// const FeaturesHr3 = posed.hr({
+const FeaturesHr3 = posed.hr({
+	visible: {
+		opacity: 1,
+		delay: 2000
+	},
+	hidden: {
+		opacity: 0
+	}
+})
+
+const FeaturesImg4 = posed.img({
+	visible: {
+		opacity: 1,
+		x: 0,
+		delay: 2500
+	},
+	hidden: {
+		x: -10,
+		opacity: 0
+	}
+})
+
+const FeaturesH4 = posed.h4({
+	visible: {
+		opacity: 1,
+		x: 0,
+		delay: 2600
+	},
+	hidden: {
+		x: 20,
+		opacity: 0
+	}
+})
+
+const FeaturesP4 = posed.p({
+	visible: {
+		opacity: 1,
+		x: 0,
+		delay: 2700
+	},
+	hidden: {
+		x: 20,
+		opacity: 0
+	}
+})
+
+// const FeaturesHr4 = posed.hr({
 // 	visible: {
 // 		opacity: 1,
 // 		delay: 6000
@@ -168,14 +215,12 @@ const Produit = () => {
 							alt="img1"
 						/>
 						<FeaturesH1 pose={sectionShown ? 'visible' : 'hidden'} className={classes.featuresH1}>
-							Fonctionnalité de Check-In
+							Créé ton compte et personnalise ton profil.
 						</FeaturesH1>
 						<FeaturesP1 pose={sectionShown ? 'visible' : 'hidden'} className={classes.featuresP1}>
-							Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-							labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-							laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
-							voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-							cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+							Créé ton compte Faydaway puis personnalise ton profil en sélectionnant ta taille, ton poids,
+							ton type de jeu et plus encore pour permettre aux utilisateurs de déterminer le type de
+							ballers que tu es.
 						</FeaturesP1>
 						<FeaturesHr1 pose={sectionShown ? 'visible' : 'hidden'} className={classes.hr1} />
 					</div>
@@ -184,18 +229,16 @@ const Produit = () => {
 						<FeaturesImg2
 							pose={sectionShown ? 'visible' : 'hidden'}
 							className={classes.featuresImg2}
-							src={image1}
+							src={image2}
 							alt="img2"
 						/>
 						<FeaturesH2 pose={sectionShown ? 'visible' : 'hidden'} className={classes.featuresH2}>
-							Planifie ta présence
+							Géo-localise des terrains et joueurs via la map.
 						</FeaturesH2>
 						<FeaturesP2 pose={sectionShown ? 'visible' : 'hidden'} className={classes.featuresP2}>
-							Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-							labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-							laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
-							voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-							cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+							Retrouves les terrains de basket à proximité et informe toi sur le nombre de joueur qui y
+							sont présent. Amis, rivaux ou nouveaux challengers t'attendent sur Faydaway. Désormais tu ne
+							manqueras plus les gros jours de match.
 						</FeaturesP2>
 						<FeaturesHr2 pose={sectionShown ? 'visible' : 'hidden'} className={classes.hr2} />
 					</div>
@@ -208,16 +251,31 @@ const Produit = () => {
 							alt="img3"
 						/>
 						<FeaturesH3 pose={sectionShown ? 'visible' : 'hidden'} className={classes.featuresH3}>
-							Organise tes matchs
+							Fais des matchs et entres les scores
 						</FeaturesH3>
 						<FeaturesP3 pose={sectionShown ? 'visible' : 'hidden'} className={classes.featuresP3}>
-							Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-							labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-							laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
-							voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-							cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+							En un contre un comme en quatre contre quatre invite les joueurs à t'affronter puis rentres
+							les résultats sur Faydaway pour partager toutes tes performances à la communauté Faydaway et
+							faire de toi un joueur d'expérience.
 						</FeaturesP3>
-						{/* <hr className={classes.hr3} /> */}
+						<FeaturesHr3 pose={sectionShown ? 'visible' : 'hidden'} className={classes.hr3} />
+					</div>
+
+					<div className={classes.featuresContainer4}>
+						<FeaturesImg4
+							pose={sectionShown ? 'visible' : 'hidden'}
+							className={classes.featuresImg4}
+							src={image1}
+							alt="img4"
+						/>
+						<FeaturesH4 pose={sectionShown ? 'visible' : 'hidden'} className={classes.featuresH4}>
+							Créé ou rejoins une squad.
+						</FeaturesH4>
+						<FeaturesP4 pose={sectionShown ? 'visible' : 'hidden'} className={classes.featuresP4}>
+							Créé ou rejoins une squad puis participe à de nombreux matchs, évènements pour montrer à ta
+							ville que tu fais parti des meilleurs.
+						</FeaturesP4>
+						{/* <FeaturesHr4 pose={sectionShown ? 'visible' : 'hidden'} className={classes.hr4} /> */}
 					</div>
 				</Paper>
 			</section>
@@ -225,8 +283,8 @@ const Produit = () => {
 	)
 }
 
-const IMAGE_WIDTH = 250
-const IMAGE_HEIGHT = 350
+const IMAGE_WIDTH = 220
+const IMAGE_HEIGHT = 280
 
 const useStyles = makeStyles((theme) =>
 	createStyles({
@@ -249,7 +307,7 @@ const useStyles = makeStyles((theme) =>
 		},
 		features: {
 			maxWidth: 742,
-			padding: '16px 24px',
+			padding: '16px 42px',
 			background: '#1C2024',
 			color: 'rgba(255, 255, 255, 0.8)',
 			marginTop: 8,
@@ -259,14 +317,19 @@ const useStyles = makeStyles((theme) =>
 		},
 		featuresP1: {
 			fontSize: '0.9rem',
-			marginBottom: 32
+			marginBottom: 64
 		},
 		featuresP2: {
 			textAlign: 'right',
 			fontSize: '0.9rem',
-			marginBottom: 32
+			marginBottom: 64
 		},
 		featuresP3: {
+			fontSize: '0.9rem',
+			marginBottom: 64
+		},
+		featuresP4: {
+			textAlign: 'right',
 			fontSize: '0.9rem',
 			marginBottom: 32
 		},
@@ -281,6 +344,10 @@ const useStyles = makeStyles((theme) =>
 		featuresH3: {
 			fontSize: '1.5rem'
 		},
+		featuresH4: {
+			textAlign: 'right',
+			fontSize: '1.5rem'
+		},
 		featuresContainer1: {
 			position: 'relative',
 			paddingLeft: IMAGE_WIDTH / 2 + 24
@@ -292,6 +359,10 @@ const useStyles = makeStyles((theme) =>
 		featuresContainer3: {
 			position: 'relative',
 			paddingLeft: IMAGE_WIDTH / 2 + 24
+		},
+		featuresContainer4: {
+			position: 'relative',
+			paddingRight: IMAGE_WIDTH / 2 + 24
 		},
 		featuresImg1: {
 			position: 'absolute',
@@ -320,17 +391,34 @@ const useStyles = makeStyles((theme) =>
 			top: -45,
 			boxShadow: theme.shadows[20]
 		},
+		featuresImg4: {
+			position: 'absolute',
+			width: IMAGE_WIDTH,
+			height: IMAGE_HEIGHT,
+			objectFit: 'cover',
+			right: -(IMAGE_WIDTH + 24) / 2,
+			top: -45,
+			boxShadow: theme.shadows[20]
+		},
 		hr1: {
 			borderColor: 'rgba(255,255,255,0.4)',
-			marginRight: 150
+			marginRight: (IMAGE_WIDTH + 42) / 2,
+			marginBottom: 64
 		},
 		hr2: {
 			borderColor: 'rgba(255,255,255,0.4)',
-			marginLeft: 150
+			marginLeft: (IMAGE_WIDTH + 42) / 2,
+			marginBottom: 64
 		},
 		hr3: {
 			borderColor: 'rgba(255,255,255,0.4)',
-			marginRight: 150
+			marginRight: (IMAGE_WIDTH + 42) / 2,
+			marginBottom: 64
+		},
+		hr4: {
+			borderColor: 'rgba(255,255,255,0.4)',
+			marginLeft: (IMAGE_WIDTH + 42) / 2,
+			marginBottom: 64
 		},
 		'@media (max-width: 812px)': {
 			features: {
@@ -343,6 +431,12 @@ const useStyles = makeStyles((theme) =>
 			featuresP2: {
 				textAlign: 'left'
 			},
+			featuresH4: {
+				textAlign: 'left'
+			},
+			featuresP4: {
+				textAlign: 'left'
+			},
 			featuresImg1: {
 				display: 'none'
 			},
@@ -350,6 +444,9 @@ const useStyles = makeStyles((theme) =>
 				display: 'none'
 			},
 			featuresImg3: {
+				display: 'none'
+			},
+			featuresImg4: {
 				display: 'none'
 			},
 			featuresContainer1: {
@@ -361,6 +458,9 @@ const useStyles = makeStyles((theme) =>
 			featuresContainer3: {
 				paddingLeft: 0
 			},
+			featuresContainer4: {
+				paddingLeft: 0
+			},
 			hr1: {
 				marginRight: 0
 			},
@@ -368,6 +468,9 @@ const useStyles = makeStyles((theme) =>
 				marginLeft: 0
 			},
 			hr3: {
+				marginRight: 0
+			},
+			hr4: {
 				marginRight: 0
 			}
 		}

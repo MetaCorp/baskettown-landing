@@ -52,7 +52,29 @@ const H2 = posed.h4({
 	}
 })
 
-const Img3 = posed.img({
+// const Img3 = posed.img({
+// 	visible: {
+// 		opacity: 1,
+// 		y: 0,
+// 		delay: 700
+// 	},
+// 	hidden: {
+// 		y: -20,
+// 		opacity: 0
+// 	}
+// })
+
+// const H3 = posed.h4({
+// 	visible: {
+// 		opacity: 1,
+// 		delay: 800
+// 	},
+// 	hidden: {
+// 		opacity: 0
+// 	}
+// })
+
+const Img4 = posed.img({
 	visible: {
 		opacity: 1,
 		y: 0,
@@ -64,32 +86,10 @@ const Img3 = posed.img({
 	}
 })
 
-const H3 = posed.h4({
-	visible: {
-		opacity: 1,
-		delay: 800
-	},
-	hidden: {
-		opacity: 0
-	}
-})
-
-const Img4 = posed.img({
-	visible: {
-		opacity: 1,
-		y: 0,
-		delay: 1000
-	},
-	hidden: {
-		y: -20,
-		opacity: 0
-	}
-})
-
 const H4 = posed.h4({
 	visible: {
 		opacity: 1,
-		delay: 1100
+		delay: 800
 	},
 	hidden: {
 		opacity: 0
